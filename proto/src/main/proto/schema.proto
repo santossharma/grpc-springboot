@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package com.marionete.proto;
+option java_multiple_files = true;
+
+service BookAuthorService {
+  // unary - synchronous service call
+  // client will send one request and server responds with one response
+  rpc getAuthor(Author) returns (Author) {}
+
+  // server-streaming - asynchronous
+  // client-streaming - asynchronous
+  // bi-directional streaming - asynchronous
+}
+
+message Book {
+  int32 bookId = 1;
+  string title = 2;
+  float price = 3;
+  int32 pages = 4;
+  int32 autherId = 5;
+}
+
+message Author {
+  int32 autherId = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string gender = 4;
+  int32 bookId = 5;
+}

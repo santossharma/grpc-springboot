@@ -1,0 +1,8 @@
+grpc:
+  client:
+    grpc-marionete-service:
+      address: static://localhost:9090
+      negotiationType: plaintext
+
+server:
+  port: 8082
